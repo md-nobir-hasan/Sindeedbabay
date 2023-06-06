@@ -6,6 +6,7 @@ use App\Http\Requests\StoreOrderRequest;
 use App\Models\DuplicateOrder;
 use App\Models\Order;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Artisan;
 
 class FrontendController extends Controller
 {
@@ -26,5 +27,9 @@ class FrontendController extends Controller
     public function thanks($id){
         $n['order'] = Order::find($id);
         return view('thanks',$n);
+    }
+    public function optimizeClear($id){
+       Artisan::call('optimize:clear');
+       echo 'Successfully optimiize cleared';
     }
 }
