@@ -255,13 +255,13 @@
                 shipping: "{{ $order->shipping_price }}",
                 currency: "BDT",
                 items: [
-                        item_name: "মরিয়ম ফুল",
+                      {  item_name: "মরিয়ম ফুল",
                         item_id: "{{ $order->id }}",
                         price: "{{ $order->p_price }}",
                         discount: "550",
                         item_category: "no category",
                         item_variant: "",
-                        quantity: "{{ $order->qty }}"
+                        quantity: "{{ $order->qty }}"},
                 ]
             }
         });
