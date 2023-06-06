@@ -44,7 +44,8 @@ class OrderController extends Controller
      */
     public function show(Order $order)
     {
-        //
+        $order->delete();
+        return redirect()->back();
     }
 
     /**
@@ -68,7 +69,9 @@ class OrderController extends Controller
      */
     public function destroy(Order $order)
     {
-        //
+        dd($order);
+        $order->softDeleted();
+        return redirect()->back();
     }
 
     public function orderStatusUpdate(Request $req){
