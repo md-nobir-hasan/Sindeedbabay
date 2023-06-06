@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Order;
 use App\Http\Requests\StoreOrderRequest;
 use App\Http\Requests\UpdateOrderRequest;
+use App\Models\DuplicateOrder;
 use App\Models\ShippingStatus;
 use Illuminate\Http\Request;
 
@@ -15,7 +16,7 @@ class OrderController extends Controller
      */
     public function index()
     {
-        $n['orders'] = Order::orderBy('id','desc')->paginate(10);
+        $n['orders'] = Order::with('ShippingStatus')->orderBy('id','desc')->paginate(10);
         $n['order_status'] = ShippingStatus::get();
         return view('backend.order.index',$n);
     }
@@ -25,7 +26,9 @@ class OrderController extends Controller
      */
     public function create()
     {
-        //
+        $n['duplicate_orders'] = DuplicateOrder::with('ShippingStatus')->orderBy('id','desc')->paginate(10);
+        $n['order_status'] = ShippingStatus::get();
+        return view('backend.order.index',$n);
     }
 
     /**
@@ -79,4 +82,5 @@ class OrderController extends Controller
         }
         // return response()->json($order);
     }
+
 }

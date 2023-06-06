@@ -23,6 +23,7 @@ use Illuminate\Support\Facades\Route;
 // Backend Routes
     Route::prefix('/admin')->name('admin.')->group(function(){
         Route::resource('/order',OrderController::class);
+        Route::get('/duplicate/order', [OrderController::class,'create'])->name('order.duplicate');
         Route::get('order-status/update',[OrderController::class,'orderStatusUpdate'])->name('order-status.update');
     });
     // Route::get('/thank-you-page/{id}', [OrderController::class,'OrderShow'])->name('Order');

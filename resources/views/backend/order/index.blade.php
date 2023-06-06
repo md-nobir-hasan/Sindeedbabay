@@ -19,8 +19,11 @@
                     <th>Status</th>
                 </tr>
             </thead>
+            @php
+                $ords = isset($orders) ? $orders : $duplicate_orders;
+            @endphp
             <tbody>
-                @forelse ($orders as $order )
+                @forelse ($ords as $order )
                     <tr>
                         <td>{{$order->name}}</td>
                         <td>{{$order->phone}}</td>
@@ -37,9 +40,9 @@
             </tbody>
         </table>
     </div>
-    @if ($orders->links())
+    @if ($ords->links())
     <div class="card-footer text-body-secondary">
-        {{$orders->links()}}
+        {{$ords->links()}}
       </div>
     @endif
 

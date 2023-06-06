@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreOrderRequest;
+use App\Models\DuplicateOrder;
 use App\Models\Order;
 use Illuminate\Http\Request;
 
@@ -13,7 +14,12 @@ class FrontendController extends Controller
     }
 
     public function order(StoreOrderRequest $req){
-       $order = Order::create($req->all());
+      $orders =  Order::where('phone',$req->phone)->get();
+        if(count($orders)>0){
+            $order = DuplicateOrder::create($req->all());
+        }else{
+            $order = Order::create($req->all());
+        }
        return to_route('thanks',[$order->id]);
     }
 

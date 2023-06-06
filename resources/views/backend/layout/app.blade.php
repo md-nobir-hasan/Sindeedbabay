@@ -20,7 +20,7 @@
                     <a class="nav-link active text-white fw-bold" aria-current="page" href="{{route('admin.order.index')}}">Order List</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link text-white fw-bold" href="#">Duplicate Orders</a>
+                    <a class="nav-link text-white fw-bold" href="{{route('admin.order.duplicate')}}">Duplicate Orders</a>
                   </li>
                   {{-- <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
