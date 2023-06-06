@@ -243,7 +243,7 @@
     </div>
 
     {{-- Push data to google  --}}
-    <script type="text/javascript">
+    {{-- <script type="text/javascript">
         dataLayer.push({
             ecommerce: null
         }); // Clear the previous ecommerce object.
@@ -265,6 +265,35 @@
                 ]
             }
         });
-    </script>
+    </script> --}}
 @endsection
 
+@push('js')
+ {{-- Push data to google  --}}
+ <script type="text/javascript">
+    dataLayer.push({
+        ecommerce: null
+    }); // Clear the previous ecommerce object.
+    dataLayer.push({
+        event: "purchase",
+        ecommerce: {
+            transaction_id: "{{ $order->id }}",
+            value: "{{  $order->qty*$order->p_price + $order->shipping_price }}",
+            shipping: "{{$order->shipping_price}}",
+            currency: "BDT",
+            items: [
+                    {
+                        item_name: "মরিয়ম ফুল",
+                        item_id: "{{ $order->id ?? 1}}",
+                        price: "{{ $order->p_price }}",
+                        discount: "550",
+                        item_category: "no category",
+                        item_variant: "no variant",
+                        quantity: "{{ $order->qty ?? 1 }}"
+                    }
+            ]
+        }
+    });
+</script>
+
+@endpush
