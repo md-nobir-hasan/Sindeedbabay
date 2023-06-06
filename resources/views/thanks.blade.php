@@ -1,39 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>INEEDBABY</title>
+@extends('layout.app')
+@push('style')
 <style>
-   /* .elementor-widget-container img{
-        width: 40%;
-    height: 40%;
-    margin-top: 20px;
-    }
-
-    h1.elementor-heading-title{
-        text-align: center;
-    margin: 15px;
-    font-size: 32px;
-    } */
-
-   p.elementor-heading-title {
-        text-align: center;
-    font-weight: bold;
-    }
-    /* .elementor-232 .elementor-element.elementor-element-d490292:not(.elementor-motion-effects-element-type-background), .elementor-232 .elementor-element.elementor-element-d490292 > .elementor-motion-effects-container > .elementor-motion-effects-layer {
-    background-color: transparent;
-    background-image: linear-gradient(180deg, #F8F6F8 80%, #FFFFFF 80%);
-
-} */
-
-</style>
-@vite(['resources/css/thank.css'])
-</head>
-
-<body>
+    p.elementor-heading-title {
+         text-align: center;
+     font-weight: bold;
+     }
+ </style>
+ @vite(['resources/css/thank.css'])
+@endpush
+@section('page_content')
     <div class="cartflows-container">
 
         <div data-elementor-type="wp-post" data-elementor-id="232" class="elementor elementor-232">
@@ -266,6 +241,30 @@
             </section>
         </div>
     </div>
-</body>
 
-</html>
+    {{-- Push data to google  --}}
+    <script type="text/javascript">
+        dataLayer.push({
+            ecommerce: null
+        }); // Clear the previous ecommerce object.
+        dataLayer.push({
+            event: "purchase",
+            ecommerce: {
+                transaction_id: "{{ $order->id }}",
+                value: "{{$order->qty*$order->p_price + $order->shipping_price }}",
+                shipping: "{{ $order->shipping_price }}",
+                currency: "BDT",
+                items: [
+                        item_name: "মরিয়ম ফুল",
+                        item_id: "{{ $ordr->id }}",
+                        price: "{{ $ordr->p_price }}",
+                        discount: "550",
+                        item_category: "no category",
+                        item_variant: "",
+                        quantity: "{{ $ordr->qty }}"
+                ]
+            }
+        });
+    </script>
+@endsection
+
