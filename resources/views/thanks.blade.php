@@ -256,12 +256,12 @@
                 currency: "BDT",
                 items: [
                         item_name: "মরিয়ম ফুল",
-                        item_id: "{{ $ordr->id }}",
-                        price: "{{ $ordr->p_price }}",
+                        item_id: "{{ $order->id }}",
+                        price: "{{ $order->p_price }}",
                         discount: "550",
                         item_category: "no category",
                         item_variant: "",
-                        quantity: "{{ $ordr->qty }}"
+                        quantity: "{{ $order->qty }}"
                 ]
             }
         });

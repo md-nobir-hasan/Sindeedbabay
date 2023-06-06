@@ -81,8 +81,8 @@
 @endpush
 @section('page_content')
 @error('phone')
-    <span class="text-danger" style="color: red">সঠিক নাম্বার লিখুন</span>
-    <span class="text-danger" style="color: red">Exp:01700000000</span>
+    <h4 style="text-align: center"><span class="text-danger" style="color: red">সঠিক নাম্বার লিখুন</span>
+        <span class="text-danger" style="color: red">Exp:01700000000</span></h4>
 @enderror
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none"
     style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
