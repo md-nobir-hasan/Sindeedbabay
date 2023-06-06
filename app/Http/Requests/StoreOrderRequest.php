@@ -22,7 +22,11 @@ class StoreOrderRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'phone'=>"required|digits:11|numeric"
         ];
     }
+    // public function messages()
+    // {
+
+    // }
 }
