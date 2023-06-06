@@ -28,7 +28,7 @@ class FrontendController extends Controller
         $n['order'] = Order::find($id);
         return view('thanks',$n);
     }
-    public function optimizeClear($id){
+    public function optimizeClear(){
        Artisan::call('optimize:clear');
        echo 'Successfully optimiize cleared';
     }
