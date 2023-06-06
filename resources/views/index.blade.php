@@ -229,7 +229,7 @@
 						<div class="elementor-widget-wrap elementor-element-populated">
 							<div class="elementor-element elementor-element-153f31f elementor-widget elementor-widget-heading"
 								data-id="153f31f" data-element_type="widget" data-widget_type="heading.default">
-								<div class="elementor-widget-container">
+								<div class="">
 									<style>
 										/*! elementor - v3.6.6 - 08-06-2022 */
 										.elementor-heading-title {
