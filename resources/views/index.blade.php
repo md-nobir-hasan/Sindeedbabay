@@ -80,7 +80,10 @@
 </style>
 @endpush
 @section('page_content')
-
+@error('phone')
+    <span class="text-danger" style="color: red">সঠিক নাম্বার লিখুন</span>
+    <span class="text-danger" style="color: red">Exp:01700000000</span>
+@enderror
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none"
     style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
     <defs>
@@ -1204,8 +1207,7 @@
                                                                 <p class="form-row form-row-first wcf-column-100 validate-required"
                                                                     id="billing_first_name_field"
                                                                     data-priority="10"><label
-                                                                        for="billing_first_name" class="">আপনার
-                                                                        সম্পূর্ন নাম লিখুন&nbsp;<abbr
+                                                                        for="billing_first_name" class=""> নাম লিখুন&nbsp;<abbr
                                                                             class="required">*</abbr></label><span
                                                                         class="woocommerce-input-wrapper">
                                                                         <input required
@@ -1563,8 +1565,7 @@
                                                                 </p> --}}
                                                                 <p class="form-row form-row-wide address-field wcf-column-100 validate-required"
                                                                     id="billing_address_1_field" data-priority="50">
-                                                                    <label for="billing_address_1" class="">আপনার
-                                                                        সম্পূর্ন ঠিকানা&nbsp;<abbr class="required"
+                                                                    <label for="billing_address_1" class="">ঠিকানা&nbsp; লিখুন<abbr class="required"
                                                                             title="required">*</abbr></label><span
                                                                         class="woocommerce-input-wrapper">
                                                                         <input
