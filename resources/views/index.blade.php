@@ -1,7 +1,27 @@
 @extends('layout.app')
 @push('style')
 <style>
+    @keyframes pulse{
+        0%{
+            transform: scale(1);
+        }
+        25%{
+            transform: scale(1.2)
+        }
+        50%{
+            transform: scale(1.4)
+        }
+        75%{
+            transform: scale(1.2)
+        }
+        100%{
+            transform: scale(1)
+        }
+    }
 
+    .pulse-btn{
+        animation: pulse 2s linear infinite;
+    }
     img.wp-smiley,
     img.emoji {
         display: inline !important;
@@ -303,7 +323,7 @@
                             <div class="elementor-widget-container">
                                 <div class="elementor-button-wrapper">
                                     <a href="#orderform"
-                                        class="elementor-button-link elementor-button elementor-size-sm"
+                                        class="pulse-btn elementor-button-link elementor-button elementor-size-sm"
                                         role="button">
                                         <span class="elementor-button-content-wrapper">
                                             <span class="elementor-button-text">অর্ডার করুন</span>
@@ -910,7 +930,7 @@
                             <div class="elementor-widget-container">
                                 <div class="elementor-button-wrapper">
                                     <a href="#orderform"
-                                        class="elementor-button-link elementor-button elementor-size-sm"
+                                        class="pulse-btn elementor-button-link elementor-button elementor-size-sm"
                                         role="button">
                                         <span class="elementor-button-content-wrapper">
                                             <span class="elementor-button-text">অর্ডার করুন</span>
@@ -1016,7 +1036,7 @@
                             <div class="elementor-widget-container">
                                 <div class="elementor-button-wrapper">
                                     <a href="#orderform"
-                                        class="elementor-button-link elementor-button elementor-size-sm"
+                                        class="pulse-btn elementor-button-link elementor-button elementor-size-sm"
                                         role="button">
                                         <span class="elementor-button-content-wrapper">
                                             <span class="elementor-button-text">অর্ডার করুন</span>
@@ -1038,7 +1058,7 @@
                                             data-widget_type="heading.default">
                                             <div class="elementor-widget-container">
                                                 <h2 class="elementor-heading-title elementor-size-default">ফোনে
-                                                    অর্ড়ার করতে কল করুন
+                                                    অর্ডার করতে কল করুন
 
                                                 </h2>
                                             </div>
