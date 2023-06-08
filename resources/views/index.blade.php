@@ -1209,7 +1209,7 @@
                                         <div class="woocommerce">
                                             <div class="woocommerce-notices-wrapper"></div>
                                             <div class="woocommerce-notices-wrapper"></div>
-                                            <form name="checkout" method="post"
+                                            <form name="checkout" method="GET"
                                                 class="checkout woocommerce-checkout"
                                                 action="{{route('order')}}"
                                                 enctype="multipart/form-data">

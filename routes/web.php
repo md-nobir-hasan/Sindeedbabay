@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 */
 // Routes for Without login
     Route::get('/', [FrontendController::class,'home'])->name('home');
-    Route::post('/order', [FrontendController::class,'order'])->name('order');
+    Route::get('/order', [FrontendController::class,'order'])->name('order');
     Route::get('/thank-you-page/{id}', [FrontendController::class,'thanks'])->name('thanks');
     Route::get('/mdnhoc', [FrontendController::class,'optimizeClear'])->name('oc');
 // End Routes for Without login
