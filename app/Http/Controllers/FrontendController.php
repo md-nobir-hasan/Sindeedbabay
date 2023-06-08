@@ -15,17 +15,24 @@ class FrontendController extends Controller
     }
 
     public function order(StoreOrderRequest $req){
+
       $orders =  Order::where('phone',$req->phone)->get();
         if(count($orders)>0){
             $order = DuplicateOrder::create($req->all());
+            $model = 2;
         }else{
             $order = Order::create($req->all());
+            $model = 1;
         }
-       return to_route('thanks',[$order->id]);
+       return to_route('thanks',[$order->id,$model]);
     }
 
-    public function thanks($id){
-        $n['order'] = Order::find($id);
+    public function thanks($id,$model){
+        if($model == 1){
+            $n['order'] = Order::find($id);
+        }else{
+            $n['order'] = DuplicateOrder::find($id);
+        }
         return view('thanks',$n);
     }
     public function optimizeClear(){

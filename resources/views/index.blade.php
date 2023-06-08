@@ -1213,8 +1213,6 @@
                                                 class="checkout woocommerce-checkout"
                                                 action="{{route('order')}}"
                                                 enctype="multipart/form-data">
-                                            @csrf
-
 
                                                 <div class="wcf-col2-set col2-set" id="customer_details">
                                                     <div class="wcf-col-1 col-1">
