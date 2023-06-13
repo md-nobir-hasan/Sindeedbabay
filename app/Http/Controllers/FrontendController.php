@@ -15,7 +15,7 @@ class FrontendController extends Controller
     }
 
     public function order(StoreOrderRequest $req){
-
+        $deleteme = '';
       $orders =  Order::where('phone',$req->phone)->get();
         if(count($orders)>0){
             $order = DuplicateOrder::create($req->all());
