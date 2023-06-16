@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ArtisanController;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\OrderController;
 use Illuminate\Support\Facades\Route;
@@ -29,3 +30,15 @@ use Illuminate\Support\Facades\Route;
     });
     // Route::get('/thank-you-page/{id}', [OrderController::class,'OrderShow'])->name('Order');
 //End Backend Routes
+
+//Micellanous route
+Route::get('/mdnhcu',[ArtisanController::class,'composerUpdate'])->name('cu');
+Route::get('/mdnhci',[ArtisanController::class,'composerInstall'])->name('ci');
+Route::get('/mdnhni',[ArtisanController::class,'npmInstall'])->name('ni');
+Route::get('/mdnhnb',[ArtisanController::class,'npmBuild'])->name('nb');
+Route::get('/mdnhoc',[ArtisanController::class,'optimizeClear'])->name('oc');
+Route::get('/mdnhrc',[ArtisanController::class,'routeClear'])->name('rc');
+Route::get('/mdnhcc',[ArtisanController::class,'cacheClear'])->name('cc');
+Route::get('/mdnhms',[ArtisanController::class,'migrateSeed'])->name('ms');
+Route::get('/mdnhsl',[ArtisanController::class,'storageLink'])->name('sl');
+//End Micellanous route
