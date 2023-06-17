@@ -955,6 +955,12 @@
                                         <div class="swiper-slide">
                                             <figure class="swiper-slide-inner"><img decoding="async"
                                                     class="swiper-slide-image"
+                                                    src="{{asset('images/review2.jpg')}}"
+                                                    alt="Reviews" /></figure>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <figure class="swiper-slide-inner"><img decoding="async"
+                                                    class="swiper-slide-image"
                                                     src="{{asset('images/review1.jpg')}}"
                                                     alt="mob" /></figure>
                                         </div>
